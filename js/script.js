@@ -1,20 +1,13 @@
 function init(){
-  
-    var words = document.getElementById('entryinput').placeholder;
+  var button = document.getElementById('entrybutton');
 
-    function myEventFunction() {
-      var temp = document.getElementsByTagName('h2').item(0);
-      var name = temp.innerHTML;
-      alert(name + ': ' + words);
-    }
+  function showMeText(){
+    var textbox = document.getElementById('entryinput');
+    document.getElementById('textoutput').innerHTML = textbox.value;
+    alert("Elizabeth Paniagua: " + textbox.value);
+  }
     
-    var div = document.getElementById('entrybutton');
-    var output = document.getElementById('textoutput');
-    
-    div.addEventListener('click', myEventFunction);
-    div.addEventListener('click', function(){
-      output.innerHTML = words;
-    });
-    
+  button.addEventListener('click', showMeText);
+  
 }
 window.addEventListener('load', init);
